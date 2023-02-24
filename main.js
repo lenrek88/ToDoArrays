@@ -11,7 +11,10 @@ function addTask(name){
 
 function deleteTask(task){
     const pos = list.findIndex(list => list.name === task);
-    list.splice(pos,1);
+    if (pos !== -1) {
+        list.splice(pos,1);
+
+    }
 }
 
 function changeStatus(task, status){
@@ -69,6 +72,8 @@ changeStatus('learn English', 'Done')
 changeStatus('clean in home', 'In Progress');
 
 addTask('make a bad');
+
+deleteTask('write a post');
 
 
 
